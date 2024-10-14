@@ -14,9 +14,9 @@ Utilised Django Forms
 ## Endpoints of Django App "Orders"
 
 urlpatterns = [
-    path('ofv/', views.orderFormView, name='order_url'),
-    path('sv/', views.showView, name='show_url'),
-    path('up/<int:f_oid>', views.updateView, name= 'update_url'),
+    path('ofv/', views.orderFormView, name='order_url'),<br>
+    path('sv/', views.showView, name='show_url'),<br>
+    path('up/<int:f_oid>', views.updateView, name= 'update_url'),<br>
     path('del/<int:f_oid>', views.deleteView, name= 'delete_url'),
 ]
 
