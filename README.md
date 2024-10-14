@@ -1,8 +1,8 @@
 # Order-Application-System
 ## Features 
 Developed Order Application  System using HTML , CSS , JavaScript and Django in Backend which performs CRUD Operations.
-Made use of Sqlite DB using Models (MVT architecture - Model, View , template)
-Utilised Django Forms 
+<br>Made use of Sqlite DB using Models (MVT architecture - Model, View , template)
+<br>Utilised Django Forms 
 
 ## List of APIs created 
 
