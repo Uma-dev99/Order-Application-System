@@ -22,4 +22,5 @@ urlpatterns = [
 
 ## Results:
 
-![Results](orders/assets/img/Screenshot 2024-10-15 010255.png)
+![Screenshot 2024-10-15 010405](https://github.com/user-attachments/assets/f1d390a2-8a87-4c02-a0de-de2bb027e206)
+![Screenshot 2024-10-15 010255](https://github.com/user-attachments/assets/62aa4ab9-ce81-4a2e-82fb-9c474c4cb46c)
