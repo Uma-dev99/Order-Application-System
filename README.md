@@ -12,7 +12,7 @@ Utilised Django Forms
 4. DeleteView
 
 ## Endpoints of Django App "Orders"
-'''
+
 urlpatterns = [
     path('ofv/', views.orderFormView, name='order_url'),
     path('sv/', views.showView, name='show_url'),
@@ -20,7 +20,6 @@ urlpatterns = [
     path('del/<int:f_oid>', views.deleteView, name= 'delete_url'),
 ]
 
-'''
 ## Results:
 
-![Screenshot](orders/assets/img/Screenshot 2024-10-15 010255.png)
+![Results](orders/assets/img/Screenshot 2024-10-15 010255.png)
