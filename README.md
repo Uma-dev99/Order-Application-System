@@ -23,4 +23,4 @@ urlpatterns = [
 '''
 ## Results:
 
-![Screenshot](assets/img/Screenshot 2024-10-15 010255.png)
+![Screenshot](orders/assets/img/Screenshot 2024-10-15 010255.png)
