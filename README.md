@@ -22,7 +22,7 @@ urlpatterns = [
     path('up/<int:f_oid>/', views.updateView, name='update_url'),
     path('del/<int:f_oid>/', views.deleteView, name='delete_url'),
 ]
-
+```
 
 ## Results:
 
