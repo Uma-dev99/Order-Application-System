@@ -3,30 +3,30 @@ from django.urls import reverse
 from .models import Orders
 from .forms import OrderForm
 
-# class OrdersModelTests(TestCase):
+class OrdersModelTests(TestCase):
 
-#     def test_orders_creation(self):
-#         order = Orders.objects.create(
-#             oid=1,
-#             fname='Uma Shankar',
-#             lname='Singh',
-#             price=235,
-#             mail='john@example.com',
-#             addr='Sector 49'
-#         )
-#         self.assertEqual(order.fname, 'Uma Shankar')
-#         self.assertEqual(order.price, 235)
+    def test_orders_creation(self):
+        order = Orders.objects.create(
+            oid=1,
+            fname='Uma Shankar',
+            lname='Singh',
+            price=235,
+            mail='john@example.com',
+            addr='Sector 49'
+        )
+        self.assertEqual(order.fname, 'Uma Shankar')
+        self.assertEqual(order.price, 235)
 
-#     def test_string_representation(self):
-#         order = Orders.objects.create(
-#             oid=2,
-#             fname='Uma Shankar',
-#             lname='Singh',
-#             price=49.99,
-#             mail='jane@example.com',
-#             addr='Sector 49'
-#         )
-#         self.assertEqual(str(order), 'Uma Shankar')
+    def test_string_representation(self):
+        order = Orders.objects.create(
+            oid=2,
+            fname='Uma Shankar',
+            lname='Singh',
+            price=49.99,
+            mail='jane@example.com',
+            addr='Sector 49'
+        )
+        self.assertEqual(str(order), 'Uma Shankar')
 
 class OrdersViewsTests(TestCase):
 
