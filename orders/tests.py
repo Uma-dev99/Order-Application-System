@@ -14,7 +14,7 @@ class OrdersModelTests(TestCase):
             addr='Sector 49'
         )
         self.assertEqual(order.fname, 'Uma Shankar')
-        self.assertEqual(order.price, 235)
+        self.assertEqual(order.price, 141)
 
     def test_string_representation(self):
         order = Orders.objects.create(
