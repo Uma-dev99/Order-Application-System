@@ -82,23 +82,22 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                {
                     // Build the Docker image
                     bat "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
-                }
+                
             }
         }
 
         stage('Run Application') {
             steps {
-                {
+                
                     // Stop and remove any previous container with the same name
                     bat "docker stop ${CONTAINER_NAME} || echo 'No running container to stop'"
                     bat "docker rm ${CONTAINER_NAME} || echo 'No container to remove'"
 
                     // Run the Docker container
                     bat "docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}"
-                }
+                
             }
         }
     }
