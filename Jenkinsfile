@@ -26,13 +26,19 @@ pipeline {
         stage('Run Application') {
             steps {
                 script {
-                    powershell """
-                        if (docker ps -q -f name=${CONTAINER_NAME}) {
-                            docker stop ${CONTAINER_NAME}
-                            docker rm ${CONTAINER_NAME}
-                        }
-                    """                    
-                    powershell "docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}"
+                    // powershell """
+                    //     if (docker ps -q -f name=${CONTAINER_NAME}) {
+                    //         docker stop ${CONTAINER_NAME}
+                    //         docker rm ${CONTAINER_NAME}
+                    //     }
+                    // """                    
+                    // Stop and remove any previous container with the same name
+                    bat "docker stop ${CONTAINER_NAME} || echo 'No running container to stop'"
+                    bat "docker rm ${CONTAINER_NAME} || echo 'No container to remove'"
+                    
+                    // Run the Docker container
+                    bat "docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}"
+                    // powershell "docker run -d --name ${CONTAINER_NAME} -p 8000:8000 ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
@@ -41,8 +47,10 @@ pipeline {
     post {
         always {
             echo "Cleaning up unused Docker images and containers to save space."
-            powershell 'docker image prune -f'
-            powershell 'docker container prune -f'
+            // powershell 'docker image prune -f'
+            // powershell 'docker container prune -f'
+            bat 'docker image prune -f'
+            bat 'docker container prune -f'
         }
         success {
             echo 'The application was successfully deployed and is running.'
