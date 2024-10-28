@@ -1,10 +1,8 @@
-# Use a base Python image from Docker Hub
 FROM python:3.12-slim
 
-# Set the working directory in the container to /app
 WORKDIR /app
 
-# Copy the current directory (your project files) to /app in the container
+
 COPY . /app
 
 # Install any required Python packages
