@@ -82,7 +82,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                node{
+                node('Built-In Node'){
                     // Build the Docker image
                     bat "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
@@ -91,7 +91,7 @@ pipeline {
 
         stage('Run Application') {
             steps {
-                node{
+                node('Built-in Node'){
                     // Stop and remove any previous container with the same name
                     bat "docker stop ${CONTAINER_NAME} || echo 'No running container to stop'"
                     bat "docker rm ${CONTAINER_NAME} || echo 'No container to remove'"
